@@ -1,0 +1,13 @@
+contry=input("Where is your favorite country?")
+#نام کشور خود را باید وارد کنید 
+if contry=="iran":
+  print("mazandaran")
+elif contry=="England":
+  print("London")
+elif contry=="France":
+  print("paris")
+elif contry=="espain":
+  print("madrid")
+else:
+  print("sharmande....")
+  #اگر کشور در گزینه های ما نباشد با کلمه شرمنده مواجه

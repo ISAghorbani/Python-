@@ -1,0 +1,47 @@
+def calculate():
+
+  
+  numbers = []
+  for i in range(6):
+    while True:
+      try:
+        num = float(input(f"لطفاً عدد {i+1} را وارد کنید: "))
+        numbers.append(num)
+        break
+      except ValueError:
+        print("ورودی نامعتبر. لطفاً یک عدد وارد کنید.")
+
+  # جمع
+  sum_result = sum(numbers)
+
+  # تفریق (منهای اولین عدد از بقیه)
+  sub_result = numbers[0] - sum(numbers[1:])
+
+  # ضرب
+  product_result = 1
+  for num in numbers:
+    product_result *= num
+
+  # تقسیم (اولین عدد تقسیم بر بقیه)
+  if all(num == 0 for num in numbers[1:]):
+      division_result = "تقسیم تعریف نشده است (مخرج صفر)"
+  else:
+      division_result = numbers[0]
+      for num in numbers[1:]:
+          if num != 0:
+              division_result /= num
+          else:
+              division_result = "تقسیم تعریف نشده است (مخرج صفر)"
+              break
+
+  print(f"جمع: {sum_result}")
+  print(f"تفریق: {sub_result}")
+  print(f"ضرب: {product_result}")
+  print(f"تقسیم: {division_result}")
+
+  if sum_result > 100 or sub_result > 100 or product_result > 100 and isinstance(division_result,float) and division_result > 100 :
+    print("Yes")
+  else:
+    print("No")
+
+calculate()

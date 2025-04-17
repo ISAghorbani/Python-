@@ -1,0 +1,29 @@
+def calculate_average():
+    # دریافت نمرات ۶ درس از کاربر
+    grades = []
+    for i in range(6):
+        while True:
+            try:
+                grade = float(input(f"نمره درس {i+1} را وارد کنید: "))
+                if 0 <= grade <= 20:
+                    grades.append(grade)
+                    break
+                else:
+                    print("نمره باید بین ۰ تا ۲۰ باشد!")
+            except ValueError:
+                print("لطفاً عدد وارد کنید!")
+
+    # محاسبه معدل
+    average = sum(grades) / len(grades)
+    print(f"\nمعدل شما: {average:.2f}")  
+
+    # بررسی جایزه
+    if 18 <= average <= 20:
+        print("🎉 جایزه شما: یک پلی‌استیشن!")
+    elif 16 <= average < 18:
+        print("🎉 جایزه شما: یک دوچرخه!")
+    else:
+        print("شرمنده... جایزه‌ای برای شما وجود ندارد.")
+
+
+calculate_average()
